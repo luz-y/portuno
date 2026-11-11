@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const COYOTE_TIME = 0.05
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 
 var floating_time : float = 0.0
 @onready var sprite := $Sprite2D
