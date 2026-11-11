@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		sprite.frame = 0
 
 	# Handle jump. Ends coyote time instantly
-	if Input.is_action_just_pressed("up") and floating_time > 0.0:
+	if Input.is_action_pressed("up") and floating_time > 0.0:
 		velocity.y = JUMP_VELOCITY
 		floating_time = 0.0
 	
