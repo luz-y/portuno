@@ -13,7 +13,6 @@ obstacles and spikes.
 
 ## To Do
 - Determine level structure and TileMapLayer convention
-- Add jump pad.
 - Test moving platforms and ensure compatibility with all spikes
 - Add Falling Spike
 - Add Retractable Spike
@@ -32,7 +31,7 @@ placed manually into the level.
 - No slopes
 - Moving platforms/parts
 - Jump Pad
-- Teleporter
+- One way collision tiles
 - Water
 - Lever/Activator
 
@@ -43,8 +42,7 @@ Jump Pad is basic scene (separate from tileset) with green part at the top that 
 for player and Legged Spikes on contact. It is a standalone basic scene for simple operation on the entities and 
 do not require tile map complex operation in the said entities code.
 
-Teleporter is a basic scene that changes position of entities. Entities are
-player, Falling Spikes, Spike Shooter's projectile, Homing Spike and Legged Spike.
+One way collision tile is just basic one way tile. May have variants.
 
 Water is a tile that allows swimming (switches movement mode) for player. 
 Kills any spike. 

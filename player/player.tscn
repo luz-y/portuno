@@ -38,12 +38,12 @@ script = ExtResource("4_yw30f")
 
 [node name="Left" type="RayCast2D" parent="JumpPadDetector" unique_id=1854652606]
 position = Vector2(-12, -8)
-target_position = Vector2(0, 16)
+target_position = Vector2(0, 24)
 collision_mask = 16
 
 [node name="Right" type="RayCast2D" parent="JumpPadDetector" unique_id=592154006]
 position = Vector2(12, -8)
-target_position = Vector2(0, 16)
+target_position = Vector2(0, 24)
 collision_mask = 16
 
 [connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered" unbinds=1]
