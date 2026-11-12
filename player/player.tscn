@@ -2,9 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://gbievfqdk44p" path="res://assets/images/jumper.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://cc7d87rr5xgw6" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Script" uid="uid://da3686vumi5fs" path="res://player/hurtbox.gd" id="3_g1dw6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
 size = Vector2(24, 22)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gikue"]
+radius = 14.0
 
 [node name="Player" type="CharacterBody2D" unique_id=300800492]
 collision_layer = 2
@@ -18,3 +22,14 @@ hframes = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=323047566]
 position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_g1dw6")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1532509037]
+position = Vector2(0, -14)
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("3_g1dw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1499407707]
+shape = SubResource("CircleShape2D_gikue")
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered" unbinds=1]
+[connection signal="body_shape_entered" from="Hurtbox" to="Hurtbox" method="_on_body_shape_entered" unbinds=2]
