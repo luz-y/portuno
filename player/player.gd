@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -500.0
 
 var floating_time : float = 0.0
 @onready var sprite := $Sprite2D
+@onready var jump_pad_detector := $JumpPadDetector
 
 
 func _physics_process(delta: float) -> void:
@@ -20,10 +21,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		floating_time = COYOTE_TIME
 		sprite.frame = 0
-
+	
 	# Handle jump. Ends coyote time instantly
-	if Input.is_action_pressed("up") and floating_time > 0.0:
-		velocity.y = JUMP_VELOCITY
+	if (Input.is_action_pressed("up")  or jump_pad_detector.is_on_jump_pad) and floating_time > 0.0:
+		velocity.y = JUMP_VELOCITY * 1.5 if jump_pad_detector.is_on_jump_pad else JUMP_VELOCITY
 		floating_time = 0.0
 	
 	# Left and Right movement

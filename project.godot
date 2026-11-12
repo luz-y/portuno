@@ -53,6 +53,7 @@ right={
 2d_physics/layer_2="entity"
 2d_physics/layer_3="spike"
 2d_physics/layer_4="hurtbox"
+2d_physics/layer_5="jump_pad"
 
 [physics]
 
