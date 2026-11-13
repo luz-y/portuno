@@ -53,5 +53,4 @@ target_position = Vector2(0, -1024)
 collision_mask = 97
 script = ExtResource("5_qjkh3")
 
-[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered" unbinds=1]
 [connection signal="body_shape_entered" from="Hurtbox" to="Hurtbox" method="_on_body_shape_entered" unbinds=2]

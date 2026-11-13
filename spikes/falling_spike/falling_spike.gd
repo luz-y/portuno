@@ -12,5 +12,6 @@ func _physics_process(delta: float) -> void:
 	velocity.y = minf(velocity.y, 800.0)
 
 
-func _on_hitbox_area_entered() -> void:
+func _on_hitbox_area_entered() -> void: # Only player has hurtbox
+	EventBus.player_died.emit()
 	queue_free()

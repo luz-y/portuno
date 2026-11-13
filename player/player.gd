@@ -9,6 +9,10 @@ var floating_time : float = 0.0
 @onready var jump_pad_detector := $JumpPadDetector
 
 
+func _ready() -> void:
+	EventBus.player_died.connect(_player_died)
+
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity. Clamp so it doesn't accelerate infinitely
 	if not is_on_floor():
@@ -42,3 +46,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	move_and_slide()
+
+
+func _player_died() -> void:
+	print("Dead")

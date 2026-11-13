@@ -14,6 +14,10 @@ config/name="portuno"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventBus="*uid://bu4n25th5uqja"
+
 [display]
 
 window/stretch/mode="canvas_items"
