@@ -41,7 +41,9 @@ The numbers represent spike entities ID:
 - Water
 - Lever/Activator
 
-One way collision tile is just basic one way tile. May have variants.  
+One way collision tile is just basic one way tile. Player can press
+down key to descent. The key can cancel coyote time and falls instantly
+when off the surface edge.  
 
 The moving platform uses TileMapLayer with "Use Kinematic Bodies" turned on. All spikes
 can technically attached to it with some being placed manually using Grid Snap.  

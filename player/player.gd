@@ -27,6 +27,13 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY * 1.5 if jump_pad_detector.is_on_jump_pad else JUMP_VELOCITY
 		floating_time = 0.0
 	
+	if Input.is_action_pressed("down"): # Fall from one way
+		# Can be used to fall through one tile gap easily.
+		floating_time = 0.0
+		collision_mask &= ~(1 << 7)
+	else:
+		collision_mask |= (1 << 7)
+	
 	# Left and Right movement
 	var direction := Input.get_axis("left", "right")
 	if direction:

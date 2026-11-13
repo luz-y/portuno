@@ -14,6 +14,7 @@ radius = 14.0
 
 [node name="Player" type="CharacterBody2D" unique_id=300800492]
 collision_layer = 2
+collision_mask = 129
 script = ExtResource("1_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1197139202]
@@ -49,7 +50,7 @@ collision_mask = 16
 
 [node name="FallingSpikeTrigger" type="RayCast2D" parent="." unique_id=316273221]
 target_position = Vector2(0, -1024)
-collision_mask = 33
+collision_mask = 97
 script = ExtResource("5_qjkh3")
 
 [connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered" unbinds=1]

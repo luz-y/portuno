@@ -55,6 +55,8 @@ right={
 2d_physics/layer_4="hurtbox"
 2d_physics/layer_5="jump_pad"
 2d_physics/layer_6="spike_trigger"
+2d_physics/layer_7="blockable"
+2d_physics/layer_8="one_way"
 
 [physics]
 
