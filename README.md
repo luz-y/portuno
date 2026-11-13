@@ -9,12 +9,10 @@ Platformer game where a character jumps their way to finish avoiding
 obstacles and spikes.
 
 ## WARNING!
-- 
+- Do not put spike tile with spike type "2" (Falling Spike) on the ground 
+as they are meant to be placed on walls and ceiling.
 
 ## To Do
-- Determine level structure and TileMapLayer convention
-- Test moving platforms and ensure compatibility with all spikes
-- Add Falling Spike
 - Add Retractable Spike
 - Create a test level for gameplay flow.
 
@@ -27,13 +25,23 @@ Level geometry is made with tiles using TileMapLayer. This is for
 static geometry of the level. Other objects such as moving platforms are 
 placed manually into the level.
 
+### Spike Tiles and Entities
+The numbers represent type ID:  
+1. Static Spike
+2. Falling Spike: Must be placed on walls and ceiling
+
+The numbers represent spike entities ID:  
+1. Falling Spike
+
 ### Map Features
 - No slopes
+- One way collision tiles
 - Moving platforms/parts
 - Jump Pad
-- One way collision tiles
 - Water
 - Lever/Activator
+
+One way collision tile is just basic one way tile. May have variants.  
 
 The moving platform uses TileMapLayer with "Use Kinematic Bodies" turned on. All spikes
 can technically attached to it with some being placed manually using Grid Snap.  
@@ -41,8 +49,6 @@ can technically attached to it with some being placed manually using Grid Snap.
 Jump Pad is basic scene (separate from tileset) with green part at the top that act as trampoline boosts jump
 for player and Legged Spikes on contact. It is a standalone basic scene for simple operation on the entities and 
 do not require tile map complex operation in the said entities code.
-
-One way collision tile is just basic one way tile. May have variants.
 
 Water is a tile that allows swimming (switches movement mode) for player. 
 Kills any spike. 
@@ -61,8 +67,7 @@ Spike enemy ideas:
 6. "Spike" Mine
 7. Legged Spike
 8. Ghost Spike
-9. Mystery Spike
-10. Sir Spiker (Boss)
+9. Sir Spiker (Boss)
 
 Static Spike: Normal spike. Part of the tiles. Lives in Spikes TileMapLayer.  
 
@@ -92,11 +97,7 @@ Ghost Spike: Proximity triggered floating spike.
 Does not kill player but temporarily blinds them (and bonus jumpscare). Phase through
 everything.  
 
-Mystery Spike: Proximity triggered spike with question mark on it. 
-Will change to one of these spikes: Homing Spike, "Spike" Mine, Legged Spike, Ghost Spike, 
-Falling Spike (if it is not on ground).
-
-Sir Spiker: The boss.  
+Sir Spiker: The boss. Larger than usual.  
 
 #### Credits
 - 

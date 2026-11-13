@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cc7d87rr5xgw6" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Script" uid="uid://da3686vumi5fs" path="res://player/hurtbox.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://bjeewmaqc4lid" path="res://player/jump_pad_detector.gd" id="4_yw30f"]
+[ext_resource type="Script" uid="uid://b0kx8sw7epn7x" path="res://player/falling_spike_trigger.gd" id="5_qjkh3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
 size = Vector2(24, 22)
@@ -45,6 +46,11 @@ collision_mask = 16
 position = Vector2(12, -8)
 target_position = Vector2(0, 24)
 collision_mask = 16
+
+[node name="FallingSpikeTrigger" type="RayCast2D" parent="." unique_id=316273221]
+target_position = Vector2(0, -1024)
+collision_mask = 33
+script = ExtResource("5_qjkh3")
 
 [connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered" unbinds=1]
 [connection signal="body_shape_entered" from="Hurtbox" to="Hurtbox" method="_on_body_shape_entered" unbinds=2]
