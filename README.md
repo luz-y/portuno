@@ -13,7 +13,6 @@ obstacles and spikes.
 as they are meant to be placed on walls and ceiling.
 
 ## To Do
-- Add Retractable Spike
 - Create a test level for gameplay flow.
 
 ### Main Character
@@ -32,6 +31,7 @@ The numbers represent type ID:
 
 The numbers represent spike entities ID:  
 1. Falling Spike
+2. Retractable Spike
 
 ### Map Features
 - No slopes
@@ -76,10 +76,13 @@ Static Spike: Normal spike. Part of the tiles. Lives in Spikes TileMapLayer.
 Falling Spike: A spike that falls to the ground. Triggered when player's upward
 raycast hits them. Placed on walls or ceiling to work. Not functioning once it hits a ground.  
 
-Retractable Spike: Periodically retracts and protracts from surface. The timer
-is for retracting and protracting are editable and compatible with moving platform. 
-Collision is always active and when protracting, it checks whether player is inside it hitbox
-during retracted stage and has not left yet. Kills if do when its protracting.  
+Retractable Spike: Periodically retracts and protracts from surface. The duration for both 
+retracting and protracting are strictly a second using a singleton Timer node. 
+This is to prevent desyncronization when some spikes have different duration and timing due to
+floating point error and other quirks. The state of the spike is editable and compatible 
+with moving platform. Collision is always active and when protracting, it checks whether player is 
+inside it hitbox during retracted stage and has not left yet. 
+Kills if do when its protracting.  
 
 Spike Shooter: A static cannon that shoots spikes. The projectile speed is fixed but the
 rate of fire is editable.  

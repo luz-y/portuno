@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b24eedmrmen5b"]
+
+[ext_resource type="Texture2D" uid="uid://b73u6llyrs5ak" path="res://assets/images/spike.png" id="1_5yoxv"]
+[ext_resource type="Script" uid="uid://chlws014vw235" path="res://spikes/retractable_spike/retractable_spike.gd" id="1_nijxi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nijxi"]
+size = Vector2(16, 24)
+
+[node name="RetractableSpike" type="Area2D" unique_id=250026267]
+z_index = -1
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_nijxi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1715958205]
+texture = ExtResource("1_5yoxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=172069438]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_nijxi")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered" unbinds=1]
+[connection signal="area_exited" from="." to="." method="_on_area_exited" unbinds=1]

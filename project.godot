@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 EventBus="*uid://bu4n25th5uqja"
+GlobalTimer="*uid://cxij72p1pvbyk"
 
 [display]
 
