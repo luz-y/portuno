@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dsw52rj5i8v7y"]
+
+[ext_resource type="Texture2D" uid="uid://fsybfdgqy0a0" path="res://assets/images/cannon.png" id="1_ejs6t"]
+[ext_resource type="Script" uid="uid://bhk3dmbx158rr" path="res://spikes/spike_shooter/spike_shooter.gd" id="1_okhfw"]
+
+[node name="SpikeShooter" type="Node2D" unique_id=1657678309]
+script = ExtResource("1_okhfw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1869558051]
+texture = ExtResource("1_ejs6t")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=981918275]
+position = Vector2(0, -24)

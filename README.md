@@ -84,8 +84,8 @@ with moving platform. Collision is always active and when protracting, it checks
 inside it hitbox during retracted stage and has not left yet. 
 Kills if do when its protracting.  
 
-Spike Shooter: A static cannon that shoots spikes. The projectile speed is fixed but the
-rate of fire is editable.  
+Spike Shooter: A static cannon that shoots spikes. Both projectile speed and
+rate of fire are fixed. Fires 1 per second with projectile travels ~250px/s.
 
 Homing Spike: A proximity triggered spike. Fixed rotation speed and acceleration. 
 Will home towards player and destroys itself upon contact on any objects that are not

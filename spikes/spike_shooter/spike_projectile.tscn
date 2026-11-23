@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://yhvv3x7shrv1"]
+
+[ext_resource type="Texture2D" uid="uid://b73u6llyrs5ak" path="res://assets/images/spike.png" id="1_7a71o"]
+[ext_resource type="Script" uid="uid://cq6j8ftd12fc7" path="res://spikes/spike_shooter/spike_projectile.gd" id="1_sleq7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nijxi"]
+size = Vector2(16, 24)
+
+[node name="SpikeProjectile" type="CharacterBody2D" unique_id=365616676]
+script = ExtResource("1_sleq7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=899493935]
+texture = ExtResource("1_7a71o")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=160241862]
+collision_layer = 0
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=962468786]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_nijxi")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered" unbinds=1]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered" unbinds=1]
