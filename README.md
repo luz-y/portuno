@@ -32,6 +32,7 @@ The numbers represent type ID:
 The numbers represent spike entities ID:  
 1. Falling Spike
 2. Retractable Spike
+3. Spike Shooter (Projectile not accessible)
 
 ### Map Features
 - No slopes

@@ -16,6 +16,6 @@ func _physics_process(_delta: float) -> void:
 	if (
 			tile_data != null 
 			and tile_data.has_custom_data("spike_type") 
-			and tile_data.get_custom_data("spike_type")
+			and tile_data.get_custom_data("spike_type") == 2 # Falling Spike Type ID
 	):
-		collider.set_cell(tile_pos, 1, Vector2.ZERO, 1)
+		collider.set_cell(tile_pos, 1, Vector2.ZERO, 1) # The entity ID
