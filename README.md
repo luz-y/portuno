@@ -12,8 +12,19 @@ obstacles and spikes.
 - Do not put spike tile with spike type "2" (Falling Spike) on the ground 
 as they are meant to be placed on walls and ceiling.
 
+## Note
+- The spike cannon is harmless and player is safe standing inside it.
+- The moving platform is just kinematic TileMapLayer for now.
+- Retractable spike must be placed as individual scene to edit the 
+retracted state in editor.
+
 ## To Do
-- Create a test level for gameplay flow.
+- Add "Spike" Mine
+- Add Legged Spike
+- Add Ghost Spike
+- Add water mechanic and interaction with water
+- Add Activator and trigger event mechanic
+- Create a test level for gameplay flow that includes all features.
 
 ### Main Character
 Simple mechanic and attributes. They have one life, just move and jump and
@@ -28,11 +39,14 @@ placed manually into the level.
 The numbers represent type ID:  
 1. Static Spike
 2. Falling Spike: Must be placed on walls and ceiling
+3. Homing Spike
 
-The numbers represent spike entities ID:  
+The numbers represent spike entities ID:
+(Based on scene collection's scene ID in the TileSet)  
 1. Falling Spike
 2. Retractable Spike
 3. Spike Shooter (Projectile not accessible)
+4. Homing Spike
 
 ### Map Features
 - No slopes
