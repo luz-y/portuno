@@ -24,6 +24,10 @@ GlobalTimer="*uid://cxij72p1pvbyk"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+player="Contain player and used for get player's information easily"
+
 [input]
 
 up={

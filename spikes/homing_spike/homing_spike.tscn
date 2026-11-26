@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bm08yfheefo7n"]
+
+[ext_resource type="Script" uid="uid://j1770402iipr" path="res://spikes/homing_spike/homing_spike.gd" id="1_73jay"]
+[ext_resource type="Texture2D" uid="uid://b73u6llyrs5ak" path="res://assets/images/spike.png" id="1_fbvfb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73jay"]
+size = Vector2(18, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbvfb"]
+size = Vector2(16, 24)
+
+[node name="HomingSpike" type="AnimatableBody2D" unique_id=1243766939]
+collision_layer = 2
+collision_mask = 65
+sync_to_physics = false
+script = ExtResource("1_73jay")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=214146208]
+texture = ExtResource("1_fbvfb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2036071177]
+shape = SubResource("RectangleShape2D_73jay")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=160438874]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1735947611]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_fbvfb")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered" unbinds=1]
