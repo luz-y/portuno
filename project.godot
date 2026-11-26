@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 
 EventBus="*uid://bu4n25th5uqja"
 GlobalTimer="*uid://cxij72p1pvbyk"
+SpikeHandler="*uid://mfuw0rxmxxd7"
 
 [display]
 
