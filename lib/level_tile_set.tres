@@ -1,0 +1,65 @@
+[gd_resource type="TileSet" format=3 uid="uid://dh447kvnvgxpx"]
+
+[ext_resource type="Texture2D" uid="uid://bwwcmxj77ssqt" path="res://assets/images/tiles.png" id="1_4675c"]
+[ext_resource type="PackedScene" uid="uid://d2djvlxxljvjb" path="res://spikes/falling_spike/falling_spike.tscn" id="2_kqyiy"]
+[ext_resource type="PackedScene" uid="uid://b24eedmrmen5b" path="res://spikes/retractable_spike/retractable_spike.tscn" id="3_hqod0"]
+[ext_resource type="PackedScene" uid="uid://dsw52rj5i8v7y" path="res://spikes/spike_shooter/spike_shooter.tscn" id="4_uemw5"]
+[ext_resource type="PackedScene" uid="uid://bm08yfheefo7n" path="res://spikes/homing_spike/homing_spike.tscn" id="5_yjskh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6uqi0"]
+resource_name = "level_tiles"
+texture = ExtResource("1_4675c")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/next_alternative_id = 8
+1:0/0 = 0
+1:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 16, -8, 16)
+1:0/0/custom_data_0 = 1
+1:0/1 = 1
+1:0/1/physics_layer_3/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/1/custom_data_0 = 2
+1:0/2 = 2
+1:0/2/physics_layer_3/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/2/custom_data_0 = 3
+1:0/3 = 3
+1:0/3/physics_layer_3/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/3/custom_data_0 = 4
+1:0/4 = 4
+1:0/4/physics_layer_3/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/4/custom_data_0 = 5
+1:0/5 = 5
+1:0/5/physics_layer_3/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/5/custom_data_0 = 6
+2:0/0 = 0
+2:0/0/physics_layer_2/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_4/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0, -16, 0)
+3:0/0/physics_layer_5/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0, -16, 0)
+3:0/0/physics_layer_5/polygon_0/one_way = true
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ppyta"]
+resource_name = "spike_entities"
+scenes/1/scene = ExtResource("2_kqyiy")
+scenes/2/scene = ExtResource("3_hqod0")
+scenes/3/scene = ExtResource("4_uemw5")
+scenes/4/scene = ExtResource("5_yjskh")
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+physics_layer_1/collision_layer = 4
+physics_layer_1/collision_mask = 0
+physics_layer_2/collision_layer = 17
+physics_layer_2/collision_mask = 0
+physics_layer_3/collision_layer = 32
+physics_layer_3/collision_mask = 0
+physics_layer_4/collision_layer = 64
+physics_layer_4/collision_mask = 0
+physics_layer_5/collision_layer = 128
+physics_layer_5/collision_mask = 0
+custom_data_layer_0/name = "spike_type"
+custom_data_layer_0/type = 2
+sources/0 = SubResource("TileSetAtlasSource_6uqi0")
+sources/1 = SubResource("TileSetScenesCollectionSource_ppyta")
