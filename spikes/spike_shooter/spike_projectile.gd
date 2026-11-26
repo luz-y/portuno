@@ -1,10 +1,13 @@
-extends CharacterBody2D
+extends AnimatableBody2D
+
+const VELOCITY = Vector2(0, -256)
 
 
-func _physics_process(_delta: float) -> void:
-	velocity = Vector2(0, -256).rotated(rotation)
+func _physics_process(delta: float) -> void:
+	var collider := move_and_collide(VELOCITY.rotated(rotation) * delta)
 	
-	move_and_slide()
+	if collider:
+		queue_free()
 
 
 func _on_hitbox_body_entered() -> void:
@@ -12,4 +15,5 @@ func _on_hitbox_body_entered() -> void:
 
 
 func _on_hitbox_area_entered() -> void:
-	print("Dead") # Temporary
+	EventBus.player_died.emit()
+	queue_free()
