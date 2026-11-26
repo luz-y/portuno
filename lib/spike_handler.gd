@@ -16,7 +16,7 @@ enum SpikeType {
 const SPIKE_ENTITY_SCENES : Dictionary[SpikeType, PackedScene]= {
 	SpikeType.FALLING_SPIKE : preload("uid://d2djvlxxljvjb"),
 	SpikeType.HOMING_SPIKE : preload("uid://bm08yfheefo7n"),
-	SpikeType.SPIKE_MINE : null,
+	SpikeType.SPIKE_MINE : preload("uid://4lgmrgdghr2f"),
 	SpikeType.LEGGED_SPIKE : null,
 	SpikeType.GHOST_SPIKE : null,
 }
@@ -48,5 +48,11 @@ func spawn_spike(tile_map: TileMapLayer, cell_coords: Vector2i, type: SpikeType)
 	var cell_global_pos := tile_map.to_global(cell_local_pos)
 	
 	spike.global_position = cell_global_pos
+	
+	if type == SpikeType.SPIKE_MINE: # Sticks to moving platform.
+		tile_map.add_child(spike)
+		# Prevent misplacing. I have no idea why it does that.
+		spike.global_position = cell_global_pos
+		return
 	
 	get_tree().current_scene.add_child(spike)

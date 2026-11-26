@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://4lgmrgdghr2f"]
+
+[ext_resource type="Script" uid="uid://mp3c41lm11d5" path="res://spikes/spike_mine/spike_mine.gd" id="1_jyla8"]
+[ext_resource type="Texture2D" uid="uid://b73u6llyrs5ak" path="res://assets/images/spike.png" id="1_tupoy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gikue"]
+radius = 192.0
+
+[node name="SpikeMine" type="Node2D" unique_id=21523835]
+script = ExtResource("1_jyla8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1715814330]
+self_modulate = Color(0.5500001, 1, 0, 1)
+texture = ExtResource("1_tupoy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1375548993]
+shape = SubResource("CircleShape2D_gikue")
+
+[node name="Timer" type="Timer" parent="." unique_id=248307764]
+process_callback = 0
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

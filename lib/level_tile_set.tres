@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b24eedmrmen5b" path="res://spikes/retractable_spike/retractable_spike.tscn" id="3_hqod0"]
 [ext_resource type="PackedScene" uid="uid://dsw52rj5i8v7y" path="res://spikes/spike_shooter/spike_shooter.tscn" id="4_uemw5"]
 [ext_resource type="PackedScene" uid="uid://bm08yfheefo7n" path="res://spikes/homing_spike/homing_spike.tscn" id="5_yjskh"]
+[ext_resource type="PackedScene" uid="uid://4lgmrgdghr2f" path="res://spikes/spike_mine/spike_mine.tscn" id="6_kqyiy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6uqi0"]
 resource_name = "level_tiles"
@@ -44,6 +45,7 @@ scenes/1/scene = ExtResource("2_kqyiy")
 scenes/2/scene = ExtResource("3_hqod0")
 scenes/3/scene = ExtResource("4_uemw5")
 scenes/4/scene = ExtResource("5_yjskh")
+scenes/5/scene = ExtResource("6_kqyiy")
 
 [resource]
 tile_size = Vector2i(32, 32)
