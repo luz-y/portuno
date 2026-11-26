@@ -9,13 +9,16 @@ func _physics_process(_delta: float) -> void:
 	
 	if collider == null:
 		return
-	# The collision point is a blank space below touched tile so add one tile up.
-	var tile_pos := collider.local_to_map(collider.to_local(get_collision_point())) + Vector2i.UP
-	var tile_data := collider.get_cell_tile_data(tile_pos)
 	
-	if (
-			tile_data != null 
-			and tile_data.has_custom_data("spike_type") 
-			and tile_data.get_custom_data("spike_type") == 2 # Falling Spike Type ID
-	):
-		collider.set_cell(tile_pos, 1, Vector2.ZERO, 1) # The entity ID
+	var tile_rid := get_collider_rid()
+	var coords := collider.get_coords_for_body_rid(tile_rid)
+	var data : TileData = collider.get_cell_tile_data(coords)
+	var is_falling_spike : bool = (
+			data != null
+			and data.has_custom_data("spike_type")
+			and data.get_custom_data("spike_type") == SpikeHandler.SpikeType.FALLING_SPIKE
+	)
+	
+	if is_falling_spike:
+		SpikeHandler.spawn_spike(collider, coords, SpikeHandler.SpikeType.FALLING_SPIKE)
+		collider.erase_cell(coords)
