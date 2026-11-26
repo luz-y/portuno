@@ -17,9 +17,10 @@ as they are meant to be placed on walls and ceiling.
 - The moving platform is just kinematic TileMapLayer for now.
 - Retractable spike must be placed as individual scene to edit the 
 retracted state in editor.
+- Spike mines sprite is dark for temporary for audio placeholder.
+- Spike mines have CollisionShape2D node only for visual debug.
 
 ## To Do
-- Add "Spike" Mine
 - Add Legged Spike
 - Add Ghost Spike
 - Add water mechanic and interaction with water

@@ -22,16 +22,14 @@ collision_mask = 129
 script = ExtResource("1_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1197139202]
-position = Vector2(0, -14)
 texture = ExtResource("1_oul6g")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=323047566]
-position = Vector2(0, -11)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_g1dw6")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1532509037]
-position = Vector2(0, -14)
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("3_g1dw6")
@@ -43,12 +41,12 @@ shape = SubResource("CircleShape2D_gikue")
 script = ExtResource("4_yw30f")
 
 [node name="Left" type="RayCast2D" parent="JumpPadDetector" unique_id=1854652606]
-position = Vector2(-12, -8)
+position = Vector2(-12, 0)
 target_position = Vector2(0, 24)
 collision_mask = 16
 
 [node name="Right" type="RayCast2D" parent="JumpPadDetector" unique_id=592154006]
-position = Vector2(12, -8)
+position = Vector2(12, 0)
 target_position = Vector2(0, 24)
 collision_mask = 16
 
