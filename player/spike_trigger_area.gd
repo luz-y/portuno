@@ -49,7 +49,7 @@ func _on_body_shape_entered(body_rid: RID, body: Node2D) -> void:
 	var coords = body.get_coords_for_body_rid(body_rid)
 	var data = body.get_cell_tile_data(coords)
 	
-	if not data.has_custom_data("spike_type"):
+	if data == null or not data.has_custom_data("spike_type"):
 		return
 	
 	var type : int = data.get_custom_data("spike_type")

@@ -7,5 +7,8 @@ func _on_body_shape_entered(body_rid: RID, body: Node2D) -> void:
 		var data = body.get_cell_tile_data(coords)
 		#print(coords, data.get_custom_data("spike_type"))
 		
-		if data.get_custom_data("spike_type") == 1:
+		if data == null or not data.has_custom_data("spike_type"):
+			return
+		
+		if data.get_custom_data("spike_type") == SpikeHandler.SpikeType.STATIC_SPIKE:
 			EventBus.player_died.emit()
