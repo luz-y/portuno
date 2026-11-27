@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://sexn056pcak5"]
+
+[ext_resource type="Texture2D" uid="uid://b73u6llyrs5ak" path="res://assets/images/spike.png" id="1_2ywrc"]
+[ext_resource type="Script" uid="uid://e6l00tqnvavm" path="res://spikes/legged_spike/legged_spike.gd" id="1_kdl7w"]
+[ext_resource type="Texture2D" uid="uid://dsif8mhwerqtk" path="res://assets/images/leg.png" id="2_vn2dc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdl7w"]
+size = Vector2(16, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn2dc"]
+size = Vector2(16, 24)
+
+[node name="LeggedSpike" type="CharacterBody2D" unique_id=830566126]
+collision_layer = 2
+collision_mask = 129
+script = ExtResource("1_kdl7w")
+
+[node name="Body" type="Sprite2D" parent="." unique_id=5140461]
+position = Vector2(0, -7)
+texture = ExtResource("1_2ywrc")
+
+[node name="RightLeg" type="Sprite2D" parent="." unique_id=1019417257]
+position = Vector2(8, 11)
+texture = ExtResource("2_vn2dc")
+
+[node name="LeftLeg" type="Sprite2D" parent="." unique_id=523311044]
+position = Vector2(-8, 11)
+texture = ExtResource("2_vn2dc")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1958007514]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_kdl7w")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=799000657]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2124803071]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_vn2dc")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered" unbinds=1]

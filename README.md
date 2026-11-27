@@ -21,7 +21,6 @@ retracted state in editor.
 - Spike mines have CollisionShape2D node only for visual debug.
 
 ## To Do
-- Add Legged Spike
 - Add Ghost Spike
 - Add water mechanic and interaction with water
 - Add Activator and trigger event mechanic
@@ -41,6 +40,8 @@ The numbers represent type ID:
 1. Static Spike
 2. Falling Spike: Must be placed on walls and ceiling
 3. Homing Spike
+4. "Spike" Mine
+5. Legged Spike
 
 The numbers represent spike entities ID:
 (Based on scene collection's scene ID in the TileSet)  
@@ -48,6 +49,8 @@ The numbers represent spike entities ID:
 2. Retractable Spike
 3. Spike Shooter (Projectile not accessible)
 4. Homing Spike
+5. "Spike" Mine
+6. Legged Spike
 
 ### Map Features
 - No slopes
