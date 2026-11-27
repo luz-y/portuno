@@ -19,7 +19,7 @@ const SPIKE_ENTITY_SCENES : Dictionary[SpikeType, PackedScene]= {
 	SpikeType.HOMING_SPIKE : preload("uid://bm08yfheefo7n"),
 	SpikeType.SPIKE_MINE : preload("uid://4lgmrgdghr2f"),
 	SpikeType.LEGGED_SPIKE : preload("uid://sexn056pcak5"),
-	SpikeType.GHOST_SPIKE : null,
+	SpikeType.GHOST_SPIKE : preload("uid://drkdce6hvnit7"),
 }
 
 

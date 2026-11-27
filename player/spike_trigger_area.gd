@@ -23,6 +23,11 @@ func _physics_process(_delta: float) -> void:
 		var tile_pos : Vector2i = tile_info[&"pos"]
 		var type : int = tile_info[&"type"]
 		
+		if type == SpikeHandler.SpikeType.GHOST_SPIKE:
+			SpikeHandler.spawn_spike(tile_map, tile_pos, type)
+			tile_map.erase_cell(tile_pos)
+			return
+		
 		var tile_local_pos := tile_map.map_to_local(tile_pos)
 		var tile_global_pos := tile_map.to_global(tile_local_pos)
 		

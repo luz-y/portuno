@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://drkdce6hvnit7"]
+
+[ext_resource type="Texture2D" uid="uid://b73u6llyrs5ak" path="res://assets/images/spike.png" id="1_2f0n2"]
+[ext_resource type="Script" uid="uid://cnqoxr4gcg4t1" path="res://spikes/ghost_spike/ghost_spike.gd" id="1_t5ffr"]
+
+[node name="GhostSpike" type="Node2D" unique_id=1373181740]
+script = ExtResource("1_t5ffr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1441779042]
+self_modulate = Color(1, 1, 1, 0.49803922)
+texture = ExtResource("1_2f0n2")
+flip_v = true
