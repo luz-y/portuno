@@ -6,12 +6,15 @@ const DECELERATION = 640.0
 const TURN_DEADZONE = 12.0
 
 var _player: Node2D
+@onready var jump_pad_detector := $JumpPadDetector
 
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		velocity.y = minf(velocity.y, 800)
+	elif jump_pad_detector.is_colliding():
+		velocity.y = -500.0
 	
 	if not is_instance_valid(_player):
 		_player = get_tree().get_first_node_in_group(&"player") as Node2D

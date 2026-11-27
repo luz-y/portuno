@@ -40,4 +40,8 @@ collision_mask = 8
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_vn2dc")
 
+[node name="JumpPadDetector" type="RayCast2D" parent="." unique_id=1734423468]
+target_position = Vector2(0, 24)
+collision_mask = 16
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered" unbinds=1]
