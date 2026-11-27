@@ -4,12 +4,15 @@ const SPEED := 128.0
 const VELOCITY := Vector2(0, -SPEED)
 const ANGULAR := TAU
 
+var _player : Node2D
+
 
 func _physics_process(delta: float) -> void:
-	var player := get_tree().get_first_node_in_group(&"player") as Node2D
+	if not is_instance_valid(_player):
+		_player = get_tree().get_first_node_in_group(&"player")
 	
-	if player != null:
-		var to_player := player.global_position - global_position
+	if is_instance_valid(_player):
+		var to_player := _player.global_position - global_position
 		var target_angle := to_player.angle() + PI / 2.0
 		rotation = rotate_toward(rotation, target_angle, ANGULAR * delta)
 	
